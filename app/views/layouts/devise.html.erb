@@ -22,11 +22,14 @@
   <body>
     <div class="vh-100">
       <%= render(partial: "shared/flash") %>
+      <%= render(partial: "shared/navbar") if current_page? edit_user_registration_path %>
       <div
         class="h-100 container d-flex flex-column justify-content-center align-items-center"
       >
 
+      <% unless account_page? %>
         <%= logo %>
+      <% end %>
       
         <div class="card card--auth shadow-sm w-100">
 
