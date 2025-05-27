@@ -1,7 +1,10 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container">
 
-  <%= link_to("SafePass", root_path, class: "navbar-brand" ) %>
+  <%= link_to(root_path, class: "navbar-brand" ) do %>
+    <i class="bi bi-safe-fill"></i> SafePass
+  <% end %>
+    
     <button
       class="navbar-toggler"
       type="button"
@@ -16,10 +19,18 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-
           <%= link_to("About", about_path, class: "nav-link") %>
         </li>
-   
+      </ul>
+
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+         <li class="nav-item">
+          <%= link_to("Log in", new_user_session_path, class: "nav-link") %>
+        </li>
+         <li class="nav-item">
+          <%= link_to("Sign up", new_user_registration_path, class: "nav-link") %>
+        </li>
+
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -39,9 +50,7 @@
         </li>
     
       </ul>
-  
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
+
     </div>
   </div>
 </nav>
