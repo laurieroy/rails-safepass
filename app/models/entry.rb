@@ -9,6 +9,7 @@ class Entry < ApplicationRecord
 
   private
 
+  # Example of custom validator, not necessarily what to use
   def url_must_be_valid
     unless url.include?("http" || "https")
       errors.add(:url, "must be valid")
