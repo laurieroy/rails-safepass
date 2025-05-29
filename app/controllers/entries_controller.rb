@@ -19,7 +19,11 @@ class EntriesController < ApplicationController
 
     if @entry.save
       flash[:notice] = "Entry has been saved!"
-      redirect_to root_path
+      respond_to do |format|
+        format.html {redirect_to root_path}
+        format.turbo_stream {}
+      end
+      
     else
       flash[:alert] = "Sorry, there was an issue"
       render :new, status: :unprocessable_entity

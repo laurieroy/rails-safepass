@@ -2,7 +2,7 @@
   <div class="container">
 
     <%= logo("h4") %>
-    
+
     <button
       class="navbar-toggler"
       type="button"
@@ -18,9 +18,6 @@
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
           <%= link_to("About", about_path, class: "nav-link") %>
-        </li>
-        <li class="nav-item">
-          <%= link_to("New Entry", new_entry_path, class: "nav-link ms-5") %>
         </li>
       </ul>
 
@@ -42,7 +39,9 @@
                   <%= current_user.email %>
                 </h6>
               </li>
-              <li><%= link_to("Account", edit_user_registration_path, class: "dropdown-item" )  %></li>              <li><hr class="dropdown-divider" /></li>
+              <li><%= link_to("Account", edit_user_registration_path, class: "dropdown-item" )  %></li>
+
+              <li><hr class="dropdown-divider" /></li>
               <li><%= link_to("Log out", destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} )  %></li>
             </ul>
           </li>
