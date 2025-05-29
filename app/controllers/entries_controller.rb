@@ -3,6 +3,7 @@ class EntriesController < ApplicationController
 
   def index
     @entries = current_user.entries
+    @main_entry = current_user.entries.first
   end
 
   def show
@@ -24,7 +25,7 @@ class EntriesController < ApplicationController
       render :new, status: :unprocessable_entity
     end
   end
-  
+
 end
 
 private
