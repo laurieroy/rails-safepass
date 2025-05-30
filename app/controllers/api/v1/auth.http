@@ -1,0 +1,32 @@
+# POST user, expect {
+#   "token": "this is your token"
+# }
+POST http://localhost:3000/api/v1/auth
+Content-Type: application/json
+{
+  "email": "test@example.com",
+  "password": "password"
+}
+
+# POST user wrong email, expect: {
+#   "errors": [
+#     "Invalid email or password"
+#   ]
+# }
+POST http://localhost:3000/api/v1/auth
+Content-Type: application/json
+{
+  "email": "test1@example.com",
+  "password": "password"
+}
+# POST user wrong password, expect: {
+#   "errors": [
+#     "Invalid email or password"
+#   ]
+# }
+POST http://localhost:3000/api/v1/auth
+Content-Type: application/json
+{
+  "email": "test@example.com",
+  "password": "pass"
+}
