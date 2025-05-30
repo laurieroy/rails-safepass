@@ -2,8 +2,16 @@
 
 ## TechStack
 - Ruby (3.3.4 ) on Rails (8.0.2)
-- PosggresQl
+- Postgresql
 
 
 ### Run app in dev environment:
 `bin/dev`
+
+
+To seed the database with provided accounts (assuming already have at least 1 user): 
+`rails db:seed` 
+
+### TODO:
+- Add in testing
+- Update seed file
