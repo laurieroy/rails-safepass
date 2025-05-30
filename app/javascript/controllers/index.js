@@ -4,5 +4,14 @@
 
 import { application } from "./application";
 
+import ClipboardController from "./clipboard_controller";
+application.register("clipboard", ClipboardController);
+
+import SearchController from "./search_controller";
+application.register("search", SearchController);
+
 import ToastController from "./toast_controller";
 application.register("toast", ToastController);
+
+import TogglePasswordController from "./toggle_password_controller";
+application.register("toggle-password", TogglePasswordController);
