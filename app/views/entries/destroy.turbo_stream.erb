@@ -3,7 +3,7 @@
 
 <% if current_user.entries.any? %>
   <%= turbo_stream.update "main-dashboard" do %>
-    <%= render(partial: "entries/main", locals: {entry: current_user.entries.first}) %>
+    <%= render(partial: "entries/main", locals: {entry: current_user.entries.order(:name).first}) %>
   <% end %>
 <% else %>
   <%= turbo_stream.update "main-dashboard" do %>
