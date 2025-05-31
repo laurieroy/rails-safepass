@@ -1,5 +1,5 @@
-# POST user, expect {
-#   "token": "this is your token"
+# POST user, expect something like: {
+#  "token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTc0ODY1MDc2OX0.ReAGZDi2tBn2Nxxfz39g8jaiMc8DrUmDGQVqH8kv9ig"
 # }
 POST http://localhost:3000/api/v1/auth
 Content-Type: application/json

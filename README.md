@@ -1,8 +1,12 @@
 # SafePassApp - A rails password manager
 
-## TechStack
+## TechStack for webapp
 - Ruby (3.3.4 ) on Rails (8.0.2)
-- Postgresql
+- Postgresql for encrypted db
+- Devise for auth
+
+JSON API
+- [JWT](https://github.com/jwt/ruby-jwt) for auth
 
 
 ### Run app in dev environment:
