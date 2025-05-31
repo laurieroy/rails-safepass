@@ -1,0 +1,5 @@
+# First authenticate a user, copy the returned token
+# Get all entries
+GET http://localhost:3000/api/v1/entries
+  Content-Type: application/json
+  Authorization: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOjEsImV4cCI6MTc0ODY1NDc2Mn0.E7XE-psrhO2VdtsM0M7dC7UUL9kwqJPi8kIRyZg2nD
