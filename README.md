@@ -15,3 +15,4 @@ To seed the database with provided accounts (assuming already have at least 1 us
 ### TODO:
 - Add in testing
 - Update seed file
+- Add team 
