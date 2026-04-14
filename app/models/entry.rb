@@ -8,7 +8,7 @@ class Entry < ApplicationRecord
   encrypts :password
 
   scope :search_name, -> (name) {
-    where("entries.name ILIKE ?", "%#{name}%") if name.present?
+    where("entries.name ILIKE ?", "%#{sanitize_sql_like(name)}%") if name.present?
   }
 
   def self.search(name)
@@ -19,8 +19,12 @@ class Entry < ApplicationRecord
 
   # Example of custom validator, not necessarily what to use
   def url_must_be_valid
-    unless url.include?("http" || "https")
-      errors.add(:url, "must be valid")
+    return if url.blank?
+    uri = URI.parse(url)
+    unless uri.is_a?(URI::HTTP) || uri.is_a?(URI::HTTPS)
+      errors.add(:url, "must be a valid HTTP or HTTPS URL")
     end
+  rescue URI::InvalidURIError
+    errors.add(:url, "must be a valid URL")
   end
 end
