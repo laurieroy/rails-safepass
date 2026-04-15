@@ -3,7 +3,7 @@ class PagesController < ApplicationController
     # @title = "Home"
     # @description = "Welcome to our homepage!"
   end
-  
+
   def about
     # @title = "About Us"
     # @description = "Learn more about our company and values."

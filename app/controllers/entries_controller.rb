@@ -10,7 +10,7 @@ class EntriesController < ApplicationController
     if @entries.length == 1
       render turbo_stream: [
         turbo_stream.update("main-dashboard", partial: "entries/main", locals: { entry: @entries.first }),
-        turbo_stream.update("entries-list", partial: "entries/entry", locals: { entry: @entries.first }),
+        turbo_stream.update("entries-list", partial: "entries/entry", locals: { entry: @entries.first })
       ]
     end
   end
@@ -28,10 +28,10 @@ class EntriesController < ApplicationController
     if @entry.save
       flash.now[:notice] = "#{@entry.name} has been saved!"
       respond_to do |format|
-        format.html {redirect_to root_path}
-        format.turbo_stream {}
+        format.html { redirect_to root_path }
+        format.turbo_stream { }
       end
-      
+
     else
       render :new, status: :unprocessable_entity
     end
@@ -45,8 +45,8 @@ class EntriesController < ApplicationController
       flash.now[:notice] = "#{@entry.name} has been updated"
       respond_to do |format|
         format.html { redirect_to @entry }
-        format.turbo_stream {}
-      end     
+        format.turbo_stream { }
+      end
     else
       render :edit, status: :unprocessable_entity
     end
@@ -57,14 +57,14 @@ class EntriesController < ApplicationController
     flash.now[:notice] = "#{@entry.name} has been deleted."
     respond_to do |format|
       format.html { redirect_to root_path }
-      format.turbo_stream {}
+      format.turbo_stream { }
     end
   end
 
 private
 
   def entry_params
-    params.expect(entry: [:name, :url, :username, :password])
+    params.expect(entry: [ :name, :url, :username, :password ])
   end
 
   def set_entry

@@ -11,7 +11,7 @@ class Api::V1::ApiBaseController < ApplicationController
   def authenticate_token
     payload = JsonWebToken.decode(auth_token)
     if payload[:error]
-      render json: {errors: [payload[:error]]}, status: :unauthorized
+      render json: { errors: [ payload[:error] ] }, status: :unauthorized
     else
       @current_user = User.find(payload["sub"])
     end

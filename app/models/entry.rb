@@ -7,7 +7,7 @@ class Entry < ApplicationRecord
   encrypts :username, deterministic: true
   encrypts :password
 
-  scope :search_name, -> (name) {
+  scope :search_name, ->(name) {
     where("entries.name ILIKE ?", "%#{sanitize_sql_like(name)}%") if name.present?
   }
 
