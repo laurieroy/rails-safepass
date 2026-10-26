@@ -71,7 +71,7 @@ Authorization: Bearer <jwt>
 | `POST` | `/api/v1/auth` | Obtain a JWT |
 | `GET` | `/api/v1/entries` | List all entries for the authenticated user |
 
-> The API is intentionally read-only. Entry management (create, update, delete) is handled through the web UI. The API exists to serve the [companion browser extension](https://github.com/lauretteroy/safepass-extension), which only needs to read credentials.
+> The API is intentionally read-only. Entry management (create, update, delete) is handled through the web UI. The API exists to serve the [companion browser extension](https://github.com/laurieroy/safepass-extension), which only needs to read credentials.
 
 ## Project Structure
 
